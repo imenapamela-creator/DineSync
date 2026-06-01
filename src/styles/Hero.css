@@ -1,0 +1,154 @@
+/* Hero.css */
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: calc(100vh - 65px);
+  padding: 60px 48px 60px 80px;
+
+  /* Two-tone diagonal background matching the design */
+  background: linear-gradient(
+    135deg,
+    #fff3ea 0%,
+    #fff3ea 55%,
+    #7a3b2e 55%,
+    #7a3b2e 100%
+  );
+}
+
+/* ---- Left side: text ---- */
+.hero-content {
+  flex: 1;
+  max-width: 480px;
+}
+
+.hero-tagline {
+  font-size: 22px;
+  color: #3b1a0e;
+  margin: 0 0 2px 0;
+  font-weight: 500;
+}
+
+.dash {
+  color: #c8651b;
+  margin-right: 4px;
+  font-weight: 700;
+}
+
+.highlight {
+  color: #c8651b;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.hero-tagline-small {
+  font-size: 18px;
+  color: #3b1a0e;
+  margin: 4px 0 0 0;
+  font-weight: 400;
+}
+
+.hero-title {
+  font-size: 80px;
+  font-weight: 800;
+  margin: 4px 0 8px 0;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.title-dine {
+  color: #3b1a0e;
+}
+
+.title-sync {
+  color: #c8651b;
+}
+
+.hero-users {
+  font-size: 13px;
+  color: #6b4030;
+  margin: 0 0 20px 0;
+}
+
+.hero-description {
+  font-size: 14px;
+  color: #5a3525;
+  line-height: 1.6;
+  margin: 0 0 32px 0;
+}
+
+/* Buttons */
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.btn-get-started {
+  text-decoration: none;
+  background-color: #3b1a0e;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 14px 28px;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+}
+
+.btn-get-started:hover {
+  background-color: #5a2a14;
+}
+
+.btn-learn-more {
+  text-decoration: none;
+  background-color: transparent;
+  color: #3b1a0e;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 13px 28px;
+  border-radius: 8px;
+  border: 1.5px solid #3b1a0e;
+  transition: all 0.2s;
+}
+
+.btn-learn-more:hover {
+  background-color: #3b1a0e;
+  color: #ffffff;
+}
+
+/* ---- Right side: food images ---- */
+.hero-images {
+  flex: 1;
+  position: relative;
+  height: 420px;
+  max-width: 420px;
+}
+
+.food-img {
+  position: absolute;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.food-top {
+  width: 130px;
+  height: 130px;
+  top: 0px;
+  left: 30px;
+}
+
+.food-center {
+  width: 210px;
+  height: 210px;
+  top: 100px;
+  left: 120px;
+}
+
+.food-bottom {
+  width: 140px;
+  height: 140px;
+  bottom: 10px;
+  right: 20px;
+}
