@@ -5,7 +5,8 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <img src="/logo.png" alt="DineSync logo" className="logo-icon" />
+        {/* orange circle with fork & knife emoji as logo placeholder */}
+        <div className="logo-icon">🍽️</div>
         <span className="logo-text">
           <span className="logo-dine">Dine</span>
           <span className="logo-sync">Sync</span>
