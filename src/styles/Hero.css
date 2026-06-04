@@ -1,167 +1,233 @@
 .hero-wrapper {
-  background-color: #fff3ea;
+  background-color: #FFF8F2;
   position: relative;
+  font-family: system-ui, -apple-system, sans-serif;
+  overflow: hidden;
 }
 
 .hero {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: calc(100vh - 65px);
-  padding: 60px 0px 60px 80px;
+  min-height: calc(100vh - 72px);
+  padding: 40px 0 40px 80px;
+  max-width: 1440px;
+  margin: 0 auto;
   position: relative;
-  overflow: hidden;
-  background-color: #fff3ea;
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 55%;
-  height: 100%;
-  background-color: #6b2d1f;
-  clip-path: polygon(18% 0%, 100% 0%, 100% 100%, 0% 100%);
-  z-index: 0;
 }
 
 .hero-content {
   flex: 1;
-  max-width: 480px;
-  position: relative;
-  z-index: 1;
+  max-width: 600px;
+  z-index: 10;
+  padding-right: 20px;
 }
 
-.hero-tagline {
-  font-size: 28px;
-  color: #3b1a0e;
-  margin: 0 0 2px 0;
-  font-weight: 600;
+.headline-container {
+  position: relative;
 }
 
 .dash {
-  color: #c8651b;
-  margin-right: 4px;
-  font-weight: 700;
+  position: absolute;
+  left: -32px;
+  top: 28px;
+  width: 18px;
+  height: 2px;
+  background-color: #E67E22;
+}
+
+.hero-title {
+  font-family: Georgia, serif;
+  font-size: 54px;
+  line-height: 1.15;
+  color: #4A2511;
+  margin: 0;
+  font-weight: normal;
 }
 
 .highlight {
-  color: #c8651b;
-  font-style: italic;
-  font-weight: 600;
+  color: #E67E22;
+  font-style: normal;
 }
 
 .hero-description {
-  font-size: 14px;
-  color: #5a3525;
+  font-size: 18px;
+  color: #6E534A;
   line-height: 1.6;
-  margin: 16px 0 32px 0;
+  margin: 24px 0 40px 0;
+  max-width: 440px;
 }
 
 .hero-buttons {
   display: flex;
   gap: 16px;
   align-items: center;
+  margin-bottom: 60px;
 }
 
 .btn-get-started {
   text-decoration: none;
-  background-color: #3b1a0e;
+  background-color: #4A1F1A;
   color: #ffffff;
-  font-size: 15px;
-  font-weight: 600;
-  padding: 14px 28px;
-  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 16px 32px;
+  border-radius: 12px;
   transition: background-color 0.2s;
 }
 
 .btn-get-started:hover {
-  background-color: #5a2a14;
+  background-color: #381613;
 }
 
 .btn-learn-more {
   text-decoration: none;
-  background-color: transparent;
-  color: #3b1a0e;
-  font-size: 15px;
+  background-color: #ffffff;
+  color: #4A1F1A;
+  font-size: 16px;
   font-weight: 500;
-  padding: 13px 28px;
-  border-radius: 8px;
-  border: 1.5px solid #3b1a0e;
+  padding: 15px 32px;
+  border-radius: 12px;
+  border: 1px solid #E2D4C9;
   transition: all 0.2s;
 }
 
 .btn-learn-more:hover {
-  background-color: #3b1a0e;
-  color: #ffffff;
+  background-color: #f9fafb;
 }
 
-.hero-images {
-  flex: 1;
-  position: relative;
-  z-index: 1;
-  height: 500px;
-  min-width: 420px;
-}
-
-.food-img {
-  position: absolute;
-  border-radius: 50%;
-  object-fit: cover;
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
-}
-
-.food-top {
-  width: 150px;
-  height: 150px;
-  top: 20px;
-  left: 20px;
-}
-
-.food-center {
-  width: 220px;
-  height: 220px;
-  top: 120px;
-  left: 160px;
-}
-
-.food-bottom {
-  width: 155px;
-  height: 155px;
-  bottom: 30px;
-  right: 30px;
-}
-
+/* Feature Grid Content Layout */
 .feature-cards {
-  display: flex;
-  gap: 20px;
-  padding: 0 80px 48px 80px;
-  background-color: #fff3ea;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  max-width: 580px;
 }
 
 .feature-card {
+  background-color: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(226, 212, 201, 0.4);
+  border-radius: 14px;
+  padding: 18px 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  background-color: #ffffff;
-  border-radius: 12px;
-  padding: 24px 32px;
-  width: 160px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+  text-align: center;
 }
 
 .feature-icon {
-  font-size: 28px;
+  width: 28px;
+  height: 28px;
+  color: #E67E22;
+  margin-bottom: 12px;
 }
 
 .feature-label {
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
-  color: #3b1a0e;
-  text-align: center;
+  line-height: 1.3;
+  color: #4A2820;
   margin: 0;
-  line-height: 1.4;
+}
+
+/* --- THE GRAPHIC CAPTURE CONTAINER --- */
+.hero-graphic-showcase {
+  position: relative;
+  width: 620px;
+  height: 600px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* Fixed Solid Side Graphic Background Piece */
+.svg-background-shape {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Absolute Plate Framing System */
+.plate-frame {
+  position: absolute;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 2;
+  box-shadow: 0 16px 36px rgba(40, 20, 10, 0.16);
+  background-color: #FFF8F2;
+}
+
+.plate-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Plate Positioning Composition Matrix */
+.frame-top {
+  width: 160px;
+  height: 160px;
+  top: 40px;
+  right: 110px;
+}
+
+.frame-center {
+  width: 330px;
+  height: 330px;
+  top: 140px;
+  right: 170px; /* Extends perfectly into the tip of the vector triangle */
+  box-shadow: 0 24px 50px rgba(40, 20, 10, 0.28);
+}
+
+.frame-bottom {
+  width: 165px;
+  height: 165px;
+  bottom: 20px;
+  right: 110px;
+}
+
+/* Showcase Floating Accent Minimalist Dots */
+.showcase-dot {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 3;
+}
+
+.dot-top-left {
+  top: 110px;
+  right: 320px;
+  width: 10px;
+  height: 10px;
+  background-color: #4A1F1A;
+}
+
+.dot-mid-left {
+  top: 220px;
+  right: 480px;
+  width: 12px;
+  height: 12px;
+  background-color: #4A1F1A;
+}
+
+.dot-low-left {
+  bottom: 200px;
+  right: 490px;
+  width: 11px;
+  height: 11px;
+  background-color: #4A1F1A;
+}
+
+.dot-bottom-center {
+  bottom: 120px;
+  right: 340px;
+  width: 10px;
+  height: 10px;
+  background-color: #4A1F1A;
 }
