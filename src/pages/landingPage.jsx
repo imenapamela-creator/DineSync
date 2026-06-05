@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
-import "../styles/LandingPage.css";
+import "../styles/landingPage.css";
 
 function LandingPage() {
   return (

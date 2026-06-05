@@ -1,12 +1,12 @@
 import React from "react";
 import "../styles/Navbar.css";
+import LogoImg from "../assets/LOGO.png";
 
 function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        {/* orange circle with fork & knife emoji as logo placeholder */}
-        <div className="logo-icon">🍽️</div>
+        <img src={LogoImg} alt="DineSync Logo" className="navbar-logo-img" />
         <span className="logo-text">
           <span className="logo-dine">Dine</span>
           <span className="logo-sync">Sync</span>

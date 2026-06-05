@@ -1,3 +1,4 @@
+/* Container & Structure Wrapper */
 .hero-wrapper {
   background-color: #FFF8F2;
   position: relative;
@@ -5,6 +6,96 @@
   overflow: hidden;
 }
 
+/* Header Navbar Styles */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 80px;
+  max-width: 1440px;
+  margin: 0 auto;
+  background-color: #FFF8F2;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar-logo-img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.logo-text {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #4A2511;
+}
+
+.accent-orange {
+  color: #E67E22;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  font-weight: 500;
+  color: #5C3E35;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: #E67E22;
+}
+
+.auth-buttons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.btn-login {
+  background: none;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: #5C3E35;
+  cursor: pointer;
+  padding: 8px 16px;
+  transition: color 0.2s ease;
+}
+
+.btn-login:hover {
+  color: #E67E22;
+}
+
+.btn-signup-nav {
+  background-color: #5C251E;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-signup-nav:hover {
+  background-color: #4A1D18;
+}
+
+/* Hero Section Layout Base */
 .hero {
   display: flex;
   align-items: center;
@@ -96,7 +187,7 @@
   background-color: #f9fafb;
 }
 
-/* Feature Grid Content Layout */
+/* Glassy Product Feature Cards */
 .feature-cards {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -132,7 +223,7 @@
   margin: 0;
 }
 
-/* --- THE GRAPHIC CAPTURE CONTAINER --- */
+/* Interactive Plate Assembly Window */
 .hero-graphic-showcase {
   position: relative;
   width: 620px;
@@ -143,7 +234,6 @@
   justify-content: flex-end;
 }
 
-/* Fixed Solid Side Graphic Background Piece */
 .svg-background-shape {
   position: absolute;
   top: 0;
@@ -153,7 +243,6 @@
   z-index: 1;
 }
 
-/* Absolute Plate Framing System */
 .plate-frame {
   position: absolute;
   border-radius: 50%;
@@ -170,7 +259,6 @@
   display: block;
 }
 
-/* Plate Positioning Composition Matrix */
 .frame-top {
   width: 160px;
   height: 160px;
@@ -182,7 +270,7 @@
   width: 330px;
   height: 330px;
   top: 140px;
-  right: 170px; /* Extends perfectly into the tip of the vector triangle */
+  right: 170px;
   box-shadow: 0 24px 50px rgba(40, 20, 10, 0.28);
 }
 
@@ -193,41 +281,13 @@
   right: 110px;
 }
 
-/* Showcase Floating Accent Minimalist Dots */
 .showcase-dot {
   position: absolute;
   border-radius: 50%;
   z-index: 3;
 }
 
-.dot-top-left {
-  top: 110px;
-  right: 320px;
-  width: 10px;
-  height: 10px;
-  background-color: #4A1F1A;
-}
-
-.dot-mid-left {
-  top: 220px;
-  right: 480px;
-  width: 12px;
-  height: 12px;
-  background-color: #4A1F1A;
-}
-
-.dot-low-left {
-  bottom: 200px;
-  right: 490px;
-  width: 11px;
-  height: 11px;
-  background-color: #4A1F1A;
-}
-
-.dot-bottom-center {
-  bottom: 120px;
-  right: 340px;
-  width: 10px;
-  height: 10px;
-  background-color: #4A1F1A;
-}
+.dot-top-left { top: 110px; right: 320px; width: 10px; height: 10px; background-color: #4A1F1A; }
+.dot-mid-left { top: 220px; right: 480px; width: 12px; height: 12px; background-color: #4A1F1A; }
+.dot-low-left { bottom: 200px; right: 490px; width: 11px; height: 11px; background-color: #4A1F1A; }
+.dot-bottom-center { bottom: 120px; right: 340px; width: 10px; height: 10px; background-color: #4A1F1A; }

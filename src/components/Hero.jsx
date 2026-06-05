@@ -1,6 +1,5 @@
 import React from "react";
 import "../styles/Hero.css";
-
 import food1 from "../assets/dish1.png";
 import food2 from "../assets/dish2.png";
 import food3 from "../assets/dish3.png";
@@ -17,9 +16,12 @@ function FeatureCard({ icon, label }) {
 function Hero() {
   return (
     <div className="hero-wrapper">
+      {/* Navbar is provided by the top-level `Navbar` component; removed duplicate here */}
+
+      {/* Main Hero Section */}
       <section className="hero">
         
-        {/* Left Side Container */}
+        {/* Left Content Side */}
         <div className="hero-content">
           <div className="headline-container">
             <span className="dash"></span>
@@ -42,6 +44,7 @@ function Hero() {
             </a>
           </div>
 
+          {/* 4 Feature Glass Cards */}
           <div className="feature-cards">
             <FeatureCard 
               label="Easy Menu Management" 
@@ -78,33 +81,30 @@ function Hero() {
           </div>
         </div>
 
-        {/* Right Side Showcase (Perfect Composition Area) */}
+        {/* Right Side Visual Panel */}
         <div className="hero-graphic-showcase">
-          
-          {/* Vector shape that stays perfectly framed inside its container */}
           <svg className="svg-background-shape" viewBox="0 0 500 600" preserveAspectRatio="none">
             <path d="M 120 300 L 500 50 L 500 550 Z" fill="#5C251E" />
           </svg>
 
-          {/* Decorative Minimal Dots */}
+          {/* Accent Geometric Dots */}
           <div className="showcase-dot dot-top-left"></div>
           <div className="showcase-dot dot-mid-left"></div>
           <div className="showcase-dot dot-low-left"></div>
           <div className="showcase-dot dot-bottom-center"></div>
 
-          {/* Placed Plates Components */}
+          {/* Layered Showcase Plates */}
           <div className="plate-frame frame-top">
             <img src={food1} alt="Top Dish" />
           </div>
           
           <div className="plate-frame frame-center">
-            <img src={food2} alt="Center Dish" />
+            <img src={food2} alt="Main Center Dish" />
           </div>
           
           <div className="plate-frame frame-bottom">
             <img src={food3} alt="Bottom Dish" />
           </div>
-
         </div>
 
       </section>

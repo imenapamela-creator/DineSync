@@ -13,20 +13,21 @@
 .navbar-logo {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
   text-decoration: none;
 }
 
-.logo-icon {
-  width: 36px;
-  height: 36px;
+.navbar-logo-img {
+  width: 64px;
+  height: 64px;
   object-fit: contain;
 }
 
 .logo-text {
-  font-size: 20px;
+  font-size: 26px;    /* Increased from 20px to match the larger image */
   font-weight: 700;
   letter-spacing: -0.3px;
+  line-height: 1;     /* Keeps text vertically centered with the logo */
 }
 
 .logo-dine {
