@@ -1,4 +1,3 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 import LogoImg from "../assets/LOGO.png"; // Updated asset reference name
 

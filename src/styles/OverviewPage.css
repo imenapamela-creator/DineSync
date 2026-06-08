@@ -1,6 +1,7 @@
 .admin-layout {
   display: flex;
   min-height: 100vh;
+  align-items: center;
   background-color: #fff8f3;
   font-family: "Georgia", serif;
 }
@@ -9,6 +10,7 @@
   flex: 1;
   padding: 32px 36px;
   overflow-y: auto;
+  min-height: calc(100vh - 64px);
 }
 
 .overview-header {

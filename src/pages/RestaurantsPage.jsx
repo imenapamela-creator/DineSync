@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 import "../styles/RestaurantsPage.css";
 
 const clientLinks = [
-  { label: "Restaurants", icon: "🏠" },
-  { label: "Favorites", icon: "❤️" },
-  { label: "Profile", icon: "👤" },
+  { label: "Restaurants", icon: "restaurant" },
+  { label: "Favorites", icon: "favorites" },
+  { label: "Profile", icon: "profile" },
 ];
 
 const restaurants = [
@@ -19,8 +20,13 @@ const restaurants = [
 
 const options = ["View All", "Description", "View near me"];
 
-function RestaurantsPage({ onVisit }) {
+function RestaurantsPage() {
+  const navigate = useNavigate();
   const [activeOption, setActiveOption] = useState("View All");
+
+  const handleVisit = (restaurant) => {
+    navigate("/client-menu", { state: { restaurantName: restaurant.name } });
+  };
 
   return (
     <div className="admin-layout">
@@ -51,7 +57,7 @@ function RestaurantsPage({ onVisit }) {
                 <div key={r.id} className="restaurant-card">
                   <div className="restaurant-card-img"></div>
                   <p className="restaurant-card-name">{r.name}</p>
-                  <button className="btn-visit" onClick={() => onVisit && onVisit(r)}>
+                  <button className="btn-visit" onClick={() => handleVisit(r)}>
                     Visit
                   </button>
                 </div>

@@ -8,8 +8,21 @@
 .topbar-icons {
   display: flex;
   gap: 16px;
-  font-size: 22px;
+}
+
+.icon-button {
+  border: none;
+  background: transparent;
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+}
+
+.icon-button svg {
+  width: 22px;
+  height: 22px;
 }
 
 .cart-icon { color: #c8651b; }

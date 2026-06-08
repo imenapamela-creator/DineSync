@@ -1,10 +1,12 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { Icon } from "../components/Icons";
 import "../styles/SignUpPage.css";
 import restaurantImg from "../assets/log.png";
 import logoImg from "../assets/LOGO.png";
 
 function SignUpPage() {
+  const navigate = useNavigate();
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [phone, setPhone] = useState("");
@@ -13,8 +15,13 @@ function SignUpPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [role, setRole] = useState("");
 
-  function handleSignUp() {
-    console.log("Signing up as:", role, { firstName, lastName, phone, email });
+  function handleRoleClick(selectedRole) {
+    setRole(selectedRole);
+    if (selectedRole === "Admin") {
+      navigate("/credentials");
+    } else if (selectedRole === "Client") {
+      navigate("/restaurants");
+    }
   }
 
   return (
@@ -50,7 +57,7 @@ function SignUpPage() {
           <div className="input-group">
             <label>First Name</label>
             <div className="input-wrapper">
-              <span className="input-icon">👤</span>
+              <Icon name="profile" className="input-icon" size={18} />
               <input
                 type="text"
                 placeholder="First Name"
@@ -63,7 +70,7 @@ function SignUpPage() {
           <div className="input-group">
             <label>Last Name</label>
             <div className="input-wrapper">
-              <span className="input-icon">👤</span>
+              <Icon name="profile" className="input-icon" size={18} />
               <input
                 type="text"
                 placeholder="Last Name"
@@ -76,7 +83,8 @@ function SignUpPage() {
           <div className="input-group">
             <label>Phone Number</label>
             <div className="input-wrapper phone-wrapper">
-              <span className="phone-code">📱 +250</span>
+              <Icon name="phone" className="phone-icon" size={18} />
+              <span className="phone-code">+250</span>
               <div className="phone-divider"></div>
               <input
                 type="tel"
@@ -90,7 +98,7 @@ function SignUpPage() {
           <div className="input-group">
             <label>Email address</label>
             <div className="input-wrapper">
-              <span className="input-icon">✉</span>
+              <Icon name="email" className="input-icon" size={18} />
               <input
                 type="email"
                 placeholder="Enter your Email"
@@ -103,19 +111,21 @@ function SignUpPage() {
           <div className="input-group">
             <label>Password</label>
             <div className="input-wrapper">
-              <span className="input-icon">🔒</span>
+              <Icon name="lock" className="input-icon" size={18} />
               <input
                 type={showPassword ? "text" : "password"}
                 placeholder="Enter your Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
-              <span
+              <button
+                type="button"
                 className="toggle-password"
                 onClick={() => setShowPassword(!showPassword)}
+                aria-label={showPassword ? "Hide password" : "Show password"}
               >
-                👁
-              </span>
+                <Icon name="eye" size={18} />
+              </button>
             </div>
             <div className="password-hints">
               <p>✅ Atleast 8 characters</p>
@@ -128,13 +138,13 @@ function SignUpPage() {
           <div className="role-buttons">
             <button
               className={`btn-role ${role === "Admin" ? "selected" : ""}`}
-              onClick={() => setRole("Admin")}
+              onClick={() => handleRoleClick("Admin")}
             >
               Admin
             </button>
             <button
               className={`btn-role ${role === "Client" ? "selected" : ""}`}
-              onClick={() => setRole("Client")}
+              onClick={() => handleRoleClick("Client")}
             >
               Client
             </button>

@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { Icon } from "./Icons";
 import "../styles/LoginForm.css";
 
 function LoginForm() {
@@ -20,7 +21,7 @@ function LoginForm() {
       <div className="input-group">
         <label>Email address</label>
         <div className="input-wrapper">
-          <span className="input-icon">✉</span>
+          <Icon name="email" className="input-icon" size={18} />
           <input
             type="email"
             placeholder="Enter your Email"
@@ -33,7 +34,7 @@ function LoginForm() {
       <div className="input-group">
         <label>Password</label>
         <div className="input-wrapper">
-          <span className="input-icon">🔒</span>
+          <Icon name="lock" className="input-icon" size={18} />
           <input
             type="password"
             placeholder="Enter your password"

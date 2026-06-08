@@ -1,14 +1,14 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Sidebar from "../components/Sidebar";
 import "../styles/OrdersPage.css";
 
 const adminLinks = [
-  { label: "overview", icon: "🏠" },
-  { label: "Menu", icon: "📋" },
-  { label: "Order", icon: "🪑" },
-  { label: "Bookings", icon: "🪑" },
-  { label: "Settings", icon: "⚙️" },
-  { label: "My account", icon: "👤" },
+  { label: "overview", icon: "home" },
+  { label: "Menu", icon: "menu" },
+  { label: "Order", icon: "order" },
+  { label: "Bookings", icon: "bookings" },
+  { label: "Settings", icon: "settings" },
+  { label: "My account", icon: "profile" },
 ];
 
 const allOrders = [

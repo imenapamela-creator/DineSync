@@ -33,7 +33,18 @@
   gap: 10px;
 }
 
-.search-icon { font-size: 15px; color: #aaa; }
+.search-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  margin-left: 4px;
+}
+
+.search-icon svg {
+  width: 18px;
+  height: 18px;
+}
 
 .search-bar input {
   border: none;

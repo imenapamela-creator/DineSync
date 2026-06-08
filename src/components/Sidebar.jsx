@@ -1,19 +1,49 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
+import { Icon } from "./Icons";
 import "../styles/Sidebar.css";
 
 function Sidebar({ links, activePage }) {
   const navigate = useNavigate();
 
   const handleLinkClick = (label) => {
-    // Converts label strings directly into your URL routes
-    if (label.toLowerCase() === "overview") {
-      navigate("/dashboard/overview");
-    } else if (label.toLowerCase() === "menu") {
-      navigate("/dashboard/menu");
-    } else {
-      console.log(`Route for ${label} not hooked up yet!`);
+    const normalized = label.toLowerCase();
+
+    if (normalized === "overview") {
+      navigate("/overview");
+      return;
     }
+
+    if (normalized === "menu") {
+      navigate("/menu");
+      return;
+    }
+
+    if (normalized === "order" || normalized === "my orders") {
+      navigate("/orders");
+      return;
+    }
+
+    if (normalized === "bookings" || normalized === "book a table") {
+      navigate("/book-table");
+      return;
+    }
+
+    if (normalized === "restaurants") {
+      navigate("/restaurants");
+      return;
+    }
+
+    if (normalized === "favorites") {
+      navigate("/restaurants");
+      return;
+    }
+
+    if (normalized === "profile") {
+      navigate("/");
+      return;
+    }
+
+    console.log(`Route for ${label} not hooked up yet!`);
   };
 
   return (
@@ -21,7 +51,7 @@ function Sidebar({ links, activePage }) {
       <div className="sidebar-logo" onClick={() => navigate("/")} style={{ cursor: "pointer" }}>
         <span className="logo-dine">Dine</span>
         <span className="logo-sync">Sync</span>
-        <span className="sidebar-menu-icon">☰</span>
+        <span className="sidebar-menu-icon"><Icon name="hamburger" size={20} /></span>
       </div>
 
       <ul className="sidebar-links">
@@ -31,7 +61,7 @@ function Sidebar({ links, activePage }) {
             className={activePage.toLowerCase() === link.label.toLowerCase() ? "active" : ""}
             onClick={() => handleLinkClick(link.label)}
           >
-            <span className="sidebar-icon">{link.icon}</span>
+            <Icon name={link.icon} className="sidebar-icon" size={18} />
             <span>{link.label}</span>
           </li>
         ))}

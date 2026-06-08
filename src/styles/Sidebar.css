@@ -9,6 +9,12 @@
   color: #ffffff;
 }
 
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+}
+
 .sidebar-logo {
   display: flex;
   align-items: center;
@@ -28,9 +34,17 @@
 
 .sidebar-menu-icon {
   margin-left: auto;
-  font-size: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   color: #ffffff;
+}
+
+.sidebar-menu-icon svg,
+.sidebar-icon svg {
+  width: 18px;
+  height: 18px;
 }
 
 .sidebar-links {

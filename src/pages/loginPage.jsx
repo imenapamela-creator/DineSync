@@ -1,4 +1,3 @@
-import React from "react";
 import LoginForm from "../components/LoginForm";
 import "../styles/LoginPage.css";
 import restaurantImg from "../assets/log.png";

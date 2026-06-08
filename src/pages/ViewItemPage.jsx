@@ -1,8 +1,13 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import "../styles/ViewItemPage.css";
 
-function ViewItemPage({ item, onBack, onAddToCart }) {
+function ViewItemPage() {
+  const navigate = useNavigate();
+  const location = useLocation();
   const [qty, setQty] = useState(2);
+  const item = location.state?.item;
+  const restaurantName = location.state?.restaurantName;
 
   return (
     <div className="view-item-overlay">
@@ -17,10 +22,10 @@ function ViewItemPage({ item, onBack, onAddToCart }) {
             <p className="view-item-desc">Creamy chicken shawarma with cream and chips and extra spice</p>
 
             <div className="view-item-buttons">
-              <button className="btn-add-cart" onClick={() => onAddToCart && onAddToCart()}>
+              <button className="btn-add-cart" onClick={() => navigate("/cart", { state: { restaurantName } })}>
                 Add to cart
               </button>
-              <button className="btn-back-item" onClick={onBack}>Back</button>
+              <button className="btn-back-item" onClick={() => navigate(-1)}>Back</button>
             </div>
           </div>
 

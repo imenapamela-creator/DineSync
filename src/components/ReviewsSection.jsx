@@ -1,4 +1,3 @@
-import React from "react";
 import WomanIcon from "../assets/woman icon.png"; // Dynamically linked avatar asset file
 
 function ReviewCard({ text, name, role }) {

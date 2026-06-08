@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/CredentialsPage.css";
 
 function StepIndicator({ currentStep }) {
@@ -144,6 +145,7 @@ function Step3({ data, onBack, onFinish }) {
 }
 
 function CredentialsPage() {
+  const navigate = useNavigate();
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
     name: "", type: "", contactPhone: "", ownerPhone: "",
@@ -156,9 +158,9 @@ function CredentialsPage() {
   }
 
   const illustrations = [
-    { label: "Helps us personalise your restaurant", emoji: "🏪" },
-    { label: "Add your restaurant location", emoji: "🗺️" },
-    { label: "Please review and confirm your details", emoji: "📋" }
+    { label: "Helps us personalise your restaurant", icon: "restaurant" },
+    { label: "Add your restaurant location", icon: "calendar" },
+    { label: "Please review and confirm your details", icon: "menu" }
   ];
 
   return (
@@ -173,14 +175,16 @@ function CredentialsPage() {
 
         {step === 1 && <Step1 data={formData} onChange={handleChange} onNext={() => setStep(2)} />}
         {step === 2 && <Step2 data={formData} onChange={handleChange} onNext={() => setStep(3)} onBack={() => setStep(1)} />}
-        {step === 3 && <Step3 data={formData} onBack={() => setStep(2)} onFinish={() => alert("Restaurant registered!")} />}
+        {step === 3 && <Step3 data={formData} onBack={() => setStep(2)} onFinish={() => navigate("/overview")} />}
       </div>
 
       <div className="cred-right">
         <StepIndicator currentStep={step} />
         <div className="cred-illustration">
           <p className="cred-illustration-label">{illustrations[step - 1].label}</p>
-          <div className="cred-illustration-emoji">{illustrations[step - 1].emoji}</div>
+          <div className="cred-illustration-icon">
+            <Icon name={illustrations[step - 1].icon} size={36} />
+          </div>
         </div>
       </div>
     </div>

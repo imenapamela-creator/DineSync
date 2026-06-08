@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
+import { Icon } from "../components/Icons";
 import "../styles/ClientMenuPage.css";
 
 const clientLinks = [
-  { label: "Menu", icon: "📋" },
-  { label: "Book a table", icon: "🪑" },
-  { label: "My orders", icon: "🪑" },
-  { label: "Favorites", icon: "❤️" },
-  { label: "Profile", icon: "👤" },
+  { label: "Menu", icon: "menu" },
+  { label: "Book a table", icon: "bookings" },
+  { label: "My orders", icon: "order" },
+  { label: "Favorites", icon: "favorites" },
+  { label: "Profile", icon: "profile" },
 ];
 
 const categories = ["All items", "Main dish", "Starter", "Desserts", "Drinks"];
@@ -21,8 +23,20 @@ const foodItems = [
   { id: 6, name: "fruit salad", price: "2000rwf", category: "Starter" },
 ];
 
-function ClientMenuPage({ restaurantName, onViewItem, onCartClick }) {
+function ClientMenuPage({ restaurantName: propRestaurantName }) {
+  const navigate = useNavigate();
+  const location = useLocation();
   const [activeCategory, setActiveCategory] = useState("All items");
+
+  const selectedRestaurant = location.state?.restaurantName || propRestaurantName || "La grande palace hotel";
+
+  const handleViewItem = (item) => {
+    navigate("/view-item", { state: { item, restaurantName: selectedRestaurant } });
+  };
+
+  const handleOpenCart = () => {
+    navigate("/cart", { state: { restaurantName: selectedRestaurant } });
+  };
 
   const filtered = activeCategory === "All items"
     ? foodItems
@@ -34,10 +48,14 @@ function ClientMenuPage({ restaurantName, onViewItem, onCartClick }) {
 
       <div className="admin-content">
         <div className="client-menu-topbar">
-          <h1 className="page-title">{restaurantName || "La grande palace hotel"}</h1>
+          <h1 className="page-title">{selectedRestaurant}</h1>
           <div className="topbar-icons">
-            <span className="cart-icon" onClick={onCartClick}>🛒</span>
-            <span className="back-icon">←</span>
+            <button type="button" className="icon-button" onClick={handleOpenCart} aria-label="Open cart">
+              <Icon name="cart" size={20} />
+            </button>
+            <button type="button" className="icon-button" onClick={() => navigate(-1)} aria-label="Go back">
+              <Icon name="back" size={20} />
+            </button>
           </div>
         </div>
 
@@ -67,7 +85,7 @@ function ClientMenuPage({ restaurantName, onViewItem, onCartClick }) {
                     <span className="food-card-price">{item.price}</span>
                     <button
                       className="btn-add"
-                      onClick={() => onViewItem && onViewItem(item)}
+                      onClick={() => handleViewItem(item)}
                     >
                       Add
                     </button>
