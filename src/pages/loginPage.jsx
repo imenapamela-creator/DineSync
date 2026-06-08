@@ -2,6 +2,7 @@ import React from "react";
 import LoginForm from "../components/LoginForm";
 import "../styles/LoginPage.css";
 import restaurantImg from "../assets/log.png";
+import logoImg from "../assets/LOGO.png";
 
 function LoginPage() {
   return (
@@ -10,7 +11,7 @@ function LoginPage() {
         <img src={restaurantImg} alt="restaurant" className="restaurant-bg" />
         <div className="login-left-overlay center-content">
           <div className="login-logo">
-            <img src="../assets/LOGO.png" alt="logo" className="logo-img" />
+            <img src={logoImg} alt="logo" className="logo-img" />
           </div>
           <div className="login-left-text">
             <h1>

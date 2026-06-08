@@ -1,8 +1,11 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/Hero.css";
-import food1 from "../assets/dish1.png";
-import food2 from "../assets/dish2.png";
-import food3 from "../assets/dish3.png";
+
+// Imported Assets
+import food1 from "../assets/dish1.png"; 
+import food2 from "../assets/dish2.png"; 
+import food3 from "../assets/dish3.png"; 
 
 function FeatureCard({ icon, label }) {
   return (
@@ -14,14 +17,13 @@ function FeatureCard({ icon, label }) {
 }
 
 function Hero() {
+  const navigate = useNavigate();
+
   return (
     <div className="hero-wrapper">
-      {/* Navbar is provided by the top-level `Navbar` component; removed duplicate here */}
-
-      {/* Main Hero Section */}
       <section className="hero">
         
-        {/* Left Content Side */}
+        {/* Left Informational Column */}
         <div className="hero-content">
           <div className="headline-container">
             <span className="dash"></span>
@@ -36,15 +38,14 @@ function Hero() {
           </p>
 
           <div className="hero-buttons">
-            <a href="/signup" className="btn-get-started">
+            <button className="btn-get-started" onClick={() => navigate("/signup")}>
               Get Started &nbsp; →
-            </a>
+            </button>
             <a href="#learn-more" className="btn-learn-more">
               Learn more
             </a>
           </div>
 
-          {/* 4 Feature Glass Cards */}
           <div className="feature-cards">
             <FeatureCard 
               label="Easy Menu Management" 
@@ -81,29 +82,33 @@ function Hero() {
           </div>
         </div>
 
-        {/* Right Side Visual Panel */}
+        {/* Right Graphical Visual Showcase Panel */}
         <div className="hero-graphic-showcase">
           <svg className="svg-background-shape" viewBox="0 0 500 600" preserveAspectRatio="none">
-            <path d="M 120 300 L 500 50 L 500 550 Z" fill="#5C251E" />
+            <path d="M 100 300 L 500 40 L 500 560 Z" fill="#5C251E" />
           </svg>
 
-          {/* Accent Geometric Dots */}
           <div className="showcase-dot dot-top-left"></div>
           <div className="showcase-dot dot-mid-left"></div>
           <div className="showcase-dot dot-low-left"></div>
           <div className="showcase-dot dot-bottom-center"></div>
 
-          {/* Layered Showcase Plates */}
-          <div className="plate-frame frame-top">
-            <img src={food1} alt="Top Dish" />
+          <div className="plate-outer-ring ring-top">
+            <div className="plate-inner-frame">
+              <img src={food1} alt="Green Salad Plate Component View" />
+            </div>
           </div>
           
-          <div className="plate-frame frame-center">
-            <img src={food2} alt="Main Center Dish" />
+          <div className="plate-outer-ring ring-center">
+            <div className="plate-inner-frame">
+              <img src={food2} alt="Pasta Component View" />
+            </div>
           </div>
           
-          <div className="plate-frame frame-bottom">
-            <img src={food3} alt="Bottom Dish" />
+          <div className="plate-outer-ring ring-bottom">
+            <div className="plate-inner-frame">
+              <img src={food3} alt="Curry Component View" />
+            </div>
           </div>
         </div>
 

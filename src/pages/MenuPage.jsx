@@ -38,7 +38,7 @@ function MenuPage() {
 
   return (
     <div className="admin-layout">
-      <Sidebar links={adminLinks} activePage="Menu" onNavigate={() => {}} />
+      <Sidebar links={adminLinks} activePage="Menu" />
 
       <div className="admin-content">
         <div className="menu-header">

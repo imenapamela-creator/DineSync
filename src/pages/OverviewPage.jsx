@@ -25,7 +25,7 @@ function StatCard({ label, value, change }) {
 function OverviewPage() {
   return (
     <div className="admin-layout">
-      <Sidebar links={adminLinks} activePage="overview" onNavigate={() => {}} />
+      <Sidebar links={adminLinks} activePage="overview" />
 
       <div className="admin-content">
         <div className="overview-header">

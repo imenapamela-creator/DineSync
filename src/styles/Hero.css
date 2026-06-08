@@ -1,106 +1,14 @@
-/* Container & Structure Wrapper */
+/* Hero Wrapper set to use #FAF4EE as requested */
 .hero-wrapper {
-  background-color: #FFF8F2;
-  position: relative;
-  font-family: system-ui, -apple-system, sans-serif;
-  overflow: hidden;
+  background-color: #FAF4EE;
+  width: 100%;
 }
 
-/* Header Navbar Styles */
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 16px 80px;
-  max-width: 1440px;
-  margin: 0 auto;
-  background-color: #FFF8F2;
-}
-
-.logo-area {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.navbar-logo-img {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-}
-
-.logo-text {
-  font-size: 24px;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  color: #4A2511;
-}
-
-.accent-orange {
-  color: #E67E22;
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 32px;
-  font-weight: 500;
-  color: #5C3E35;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: inherit;
-  transition: color 0.2s ease;
-}
-
-.nav-links a:hover {
-  color: #E67E22;
-}
-
-.auth-buttons {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.btn-login {
-  background: none;
-  border: none;
-  font-size: 16px;
-  font-weight: 500;
-  color: #5C3E35;
-  cursor: pointer;
-  padding: 8px 16px;
-  transition: color 0.2s ease;
-}
-
-.btn-login:hover {
-  color: #E67E22;
-}
-
-.btn-signup-nav {
-  background-color: #5C251E;
-  color: #ffffff;
-  font-size: 15px;
-  font-weight: 500;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.btn-signup-nav:hover {
-  background-color: #4A1D18;
-}
-
-/* Hero Section Layout Base */
 .hero {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: calc(100vh - 72px);
+  min-height: calc(100vh - 76px);
   padding: 40px 0 40px 80px;
   max-width: 1440px;
   margin: 0 auto;
@@ -164,6 +72,8 @@
   font-weight: 500;
   padding: 16px 32px;
   border-radius: 12px;
+  border: none;
+  cursor: pointer;
   transition: background-color 0.2s;
 }
 
@@ -187,7 +97,6 @@
   background-color: #f9fafb;
 }
 
-/* Glassy Product Feature Cards */
 .feature-cards {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -196,9 +105,9 @@
 }
 
 .feature-card {
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(8px);
-  border: 1px solid rgba(226, 212, 201, 0.4);
+  border: 1px solid rgba(226, 212, 201, 0.5);
   border-radius: 14px;
   padding: 18px 8px;
   display: flex;
@@ -223,10 +132,9 @@
   margin: 0;
 }
 
-/* Interactive Plate Assembly Window */
 .hero-graphic-showcase {
   position: relative;
-  width: 620px;
+  width: 650px;
   height: 600px;
   flex-shrink: 0;
   display: flex;
@@ -243,51 +151,42 @@
   z-index: 1;
 }
 
-.plate-frame {
+.plate-outer-ring {
   position: absolute;
+  background-color: #fff8f3;
   border-radius: 50%;
-  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 2;
-  box-shadow: 0 16px 36px rgba(40, 20, 10, 0.16);
-  background-color: #FFF8F2;
+  box-shadow: 0 10px 30px rgba(74, 37, 17, 0.06);
 }
 
-.plate-frame img {
+.plate-inner-frame {
+  width: 82%;
+  height: 82%;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.plate-inner-frame img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
 }
 
-.frame-top {
-  width: 160px;
-  height: 160px;
-  top: 40px;
-  right: 110px;
+.ring-top { width: 180px; height: 180px; top: 60px; right: 140px; }
+.ring-center {
+  width: 360px;
+  height: 360px;
+  top: 120px;
+  right: 220px;
+  box-shadow: 0 20px 45px rgba(74, 37, 17, 0.12);
 }
+.ring-bottom { width: 185px; height: 185px; bottom: 40px; right: 140px; }
 
-.frame-center {
-  width: 330px;
-  height: 330px;
-  top: 140px;
-  right: 170px;
-  box-shadow: 0 24px 50px rgba(40, 20, 10, 0.28);
-}
-
-.frame-bottom {
-  width: 165px;
-  height: 165px;
-  bottom: 20px;
-  right: 110px;
-}
-
-.showcase-dot {
-  position: absolute;
-  border-radius: 50%;
-  z-index: 3;
-}
-
-.dot-top-left { top: 110px; right: 320px; width: 10px; height: 10px; background-color: #4A1F1A; }
-.dot-mid-left { top: 220px; right: 480px; width: 12px; height: 12px; background-color: #4A1F1A; }
-.dot-low-left { bottom: 200px; right: 490px; width: 11px; height: 11px; background-color: #4A1F1A; }
-.dot-bottom-center { bottom: 120px; right: 340px; width: 10px; height: 10px; background-color: #4A1F1A; }
+.showcase-dot { position: absolute; border-radius: 50%; z-index: 3; }
+.dot-top-left { top: 150px; right: 380px; width: 10px; height: 10px; background-color: #4A1F1A; }
+.dot-mid-left { top: 260px; right: 540px; width: 12px; height: 12px; background-color: #4A1F1A; }
+.dot-low-left { bottom: 240px; right: 550px; width: 11px; height: 11px; background-color: #4A1F1A; }
+.dot-bottom-center { bottom: 140px; right: 390px; width: 10px; height: 10px; background-color: #4A1F1A; }

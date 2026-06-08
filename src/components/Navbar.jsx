@@ -1,28 +1,34 @@
 import React from "react";
-import "../styles/Navbar.css";
-import LogoImg from "../assets/LOGO.png";
+import { useNavigate } from "react-router-dom";
+import LogoImg from "../assets/LOGO.png"; // Updated asset reference name
 
 function Navbar() {
+  const navigate = useNavigate();
+
   return (
-    <nav className="navbar">
-      <div className="navbar-logo">
-        <img src={LogoImg} alt="DineSync Logo" className="navbar-logo-img" />
-        <span className="logo-text">
-          <span className="logo-dine">Dine</span>
-          <span className="logo-sync">Sync</span>
-        </span>
+    <nav className="navbar-container">
+      <div className="navbar-brand">
+        <img src={LogoImg} alt="DineSync System Corporate Brandmark" />
+        <div className="logo-text">
+          <span className="dine-black">Dine</span>
+          <span className="sync-orange">Sync</span>
+        </div>
       </div>
 
-      <ul className="navbar-links">
-        <li><a href="#how-it-works">How it works</a></li>
-        <li><a href="#features">Features</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-        <li><a href="#contacts">Contacts</a></li>
-      </ul>
+      <div className="navbar-links">
+        <a href="#how-it-works">How it works</a>
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contacts">Contacts</a>
+      </div>
 
-      <div className="navbar-auth">
-        <a href="/login" className="btn-login">Login</a>
-        <a href="/signup" className="btn-signup">Sign Up</a>
+      <div className="navbar-actions">
+        <button className="btn-nav-login" onClick={() => navigate("/login")}>
+          Login
+        </button>
+        <button className="btn-nav-signup" onClick={() => navigate("/signup")}>
+          Sign Up
+        </button>
       </div>
     </nav>
   );

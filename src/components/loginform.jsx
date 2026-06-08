@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "../styles/LoginForm.css";
 
 function LoginForm() {
@@ -40,7 +41,7 @@ function LoginForm() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <a href="/forgot-password" className="forgot-link">forgot password?</a>
+        <Link to="/forgot-password" className="forgot-link">forgot password?</Link>
       </div>
 
       <button className="btn-login" onClick={handleLogin}>
@@ -65,7 +66,7 @@ function LoginForm() {
       </div>
 
       <p className="signup-text">
-        Don't have ann account ? <a href="/signup">Sign Up</a>
+        Don't have an account? <Link to="/signup">Sign Up</Link>
       </p>
     </div>
   );

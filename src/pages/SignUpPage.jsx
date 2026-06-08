@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "../styles/SignUpPage.css";
 import restaurantImg from "../assets/log.png";
+import logoImg from "../assets/LOGO.png";
 
 function SignUpPage() {
   const [firstName, setFirstName] = useState("");
@@ -21,7 +23,7 @@ function SignUpPage() {
         <img src={restaurantImg} alt="restaurant" className="signup-bg" />
         <div className="signup-left-overlay">
           <div className="signup-logo">
-            <img src="../assets/LOGO.png" alt="logo" className="logo-img" />
+            <img src={logoImg} alt="logo" className="logo-img" />
           </div>
           <div className="signup-left-text">
             <h1>
@@ -139,7 +141,7 @@ function SignUpPage() {
           </div>
 
           <p className="login-text">
-            Already have an account? <a href="/login">Log In</a>
+            Already have an account? <Link to="/login">Log In</Link>
           </p>
         </div>
       </div>
