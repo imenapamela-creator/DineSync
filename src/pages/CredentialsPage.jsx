@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Icon } from "../components/Icons";
 import "../styles/CredentialsPage.css";
 
 function StepIndicator({ currentStep }) {
@@ -11,8 +12,8 @@ function StepIndicator({ currentStep }) {
         const isDone = stepNum < currentStep;
         const isActive = stepNum === currentStep;
         return (
-          <React.Fragment key={label}>
-            <div className="step-item">
+          <>
+            <div className="step-item" key={label}>
               <div className={`step-circle ${isDone ? "done" : ""} ${isActive ? "active" : ""}`}>
                 {isDone ? "✓" : stepNum}
               </div>
@@ -21,7 +22,7 @@ function StepIndicator({ currentStep }) {
             {index < steps.length - 1 && (
               <div className={`step-line ${stepNum < currentStep ? "done-line" : ""}`}></div>
             )}
-          </React.Fragment>
+          </>
         );
       })}
     </div>

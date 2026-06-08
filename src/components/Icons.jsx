@@ -1,5 +1,3 @@
-import React from "react";
-
 const iconDefinitions = {
   hamburger: (
     <>
@@ -66,7 +64,12 @@ const iconDefinitions = {
     </>
   ),
   back: <path d="M15 6l-6 6 6 6" />,
-  email: <path d="M3 7h18v10H3z" fill="none" /><path d="M3 7l9 6 9-6" />,
+  email: (
+    <>
+      <path d="M3 7h18v10H3z" fill="none" />
+      <path d="M3 7l9 6 9-6" />
+    </>
+  ),
   lock: (
     <>
       <rect x="6" y="11" width="12" height="9" rx="2" />
