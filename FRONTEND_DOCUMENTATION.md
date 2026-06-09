@@ -1,403 +1,83 @@
-# DineSync Frontend - Complete Documentation
+# DineSync Frontend — Documentation
 
-## 📋 PROJECT OVERVIEW
+This document describes the frontend application, its structure, and how the user flows are organized.
 
-**Project Name:** DineSync Frontend  
-**Framework:** React 19 with Vite  
-**Routing:** React Router v7  
-**Type:** Single Page Application (SPA) - Restaurant & Dining Management Platform  
-**Purpose:** Multi-user platform for restaurants to manage menus, orders, bookings and for clients to discover restaurants, view menus, and make reservations
+## Project summary
 
----
+- Single-page React app built with Vite.
+- Two primary user roles: Admin (restaurant management) and Client (restaurant discovery & ordering).
+- Routes and pages are defined in `src/App.jsx`.
 
-## 🏗️ PROJECT STRUCTURE
+## Key scripts
 
-```
-DineSync/Frontend/
-├── public/
-├── src/
-│   ├── assets/                 # Images and static files
-│   ├── components/             # Reusable UI components
-│   ├── pages/                  # Full page components (Routes)
-│   ├── styles/                 # CSS files (one per component/page)
-│   ├── App.jsx                 # Main routing component
-│   ├── App.css                 # Root app styles
-│   ├── index.css               # Global styles
-│   └── main.jsx                # React DOM entry point
-├── package.json                # Dependencies and scripts
-├── vite.config.js              # Vite build config
-├── eslint.config.js            # ESLint configuration
-└── index.html                  # HTML entry point
-```
-
----
-
-## 📦 DEPENDENCIES & BUILD SETUP
-
-### package.json Details:
-```json
-{
-  "name": "dinesync_frontend",
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",                    // Start dev server
-    "build": "vite build",            // Production build
-    "lint": "eslint .",               // Run ESLint
-    "preview": "vite preview"         // Preview production build
-  }
-}
-```
-
-### Core Dependencies:
-- **react** (^19.2.6) - UI library
-- **react-dom** (^19.2.6) - DOM rendering
-- **react-router-dom** (^7.17.0) - Routing & navigation
-
-### Dev Dependencies:
-- **vite** (^8.0.12) - Build tool & dev server
-- **@vitejs/plugin-react** - React support in Vite
-- **eslint** - Code linting
-- **eslint-plugin-react-hooks** - React Hooks linting
-- **eslint-plugin-react-refresh** - React Refresh support
-
-### Commands:
 ```bash
-npm run dev        # Start development server (hot reload)
-npm run build      # Create production build
-npm run lint       # Check code quality
-npm run preview    # Preview built app
+npm install
+npm run dev    # start dev server
+npm run build  # production build
+npm run preview
+npm run lint
 ```
 
----
+## High-level structure
 
-## 🎯 ROUTING ARCHITECTURE
+src/
+- assets/ — images and static media
+- components/ — Navbar, Sidebar, Icon, Hero, Footer, LoginForm, etc.
+- pages/ — top-level route pages (LandingPage, SignUpPage, CredentialsPage, OverviewPage, MenuPage, OrdersPage, RestaurantsPage, ClientMenuPage, ViewItemPage, CartPage, BookTablePage)
+- styles/ — CSS files for pages/components
 
-### Main Routing (App.jsx)
-All routes are configured using **React Router BrowserRouter**:
+## User flow (enforced)
 
-| Route | Component | Purpose |
-|-------|-----------|---------|
-| `/` | `LandingPage` | Public landing/home page |
-| `/login` | `LoginPage` | User login |
-| `/signup` | `SignUpPage` | User registration (Admin/Client role) |
-| `/credentials` | `CredentialsPage` | Restaurant setup wizard (3-step form) |
-| `/overview` | `OverviewPage` | Admin dashboard with stats & charts |
-| `/menu` | `MenuPage` | Admin menu management |
-| `/orders` | `OrdersPage` | Admin order management |
-| `/restaurants` | `RestaurantsPage` | Client restaurant discovery |
-| `/client-menu` | `ClientMenuPage` | Client menu viewing |
-| `/cart` | `CartPage` | Client shopping cart |
-| `/view-item` | `ViewItemPage` | Client item detail view |
-| `/book-table` | `BookTablePage` | Client table booking |
+Landing Page
+  ├── "Get Started" / "Sign Up" → `SignUpPage`
+  └── "Login" → `LoginPage`
 
----
+SignUpPage
+  ├── "Admin" button → `CredentialsPage`
+  └── "Client" button → `RestaurantsPage`
 
-## 🧩 COMPONENTS (Reusable UI Pieces)
+CredentialsPage (3 steps) → `OverviewPage`
 
-### 1. **Navbar.jsx** (`/src/components/Navbar.jsx`)
-**Purpose:** Main navigation bar for landing page  
-**Features:**
-- Logo display with DineSync branding
-- Navigation links: "How it works", "Features", "Pricing", "Contacts"
-- Auth buttons: Login and Sign Up links
-- Used only on Landing Page
+OverviewPage (admin sidebar)
+  ├── Menu → `MenuPage`
+  └── Order → `OrdersPage`
 
-**JSX Structure:**
-```jsx
-<nav className="navbar">
-  <div className="navbar-logo"> // Logo section
-  <ul className="navbar-links">  // Navigation links
-  <div className="navbar-auth">  // Login/Signup buttons
-</nav>
-```
+RestaurantsPage (client)
+  └── "Visit" → `ClientMenuPage`
 
-**Styling:** Uses `Navbar.css` with flexbox layout
+ClientMenuPage
+  └── "Add" on a dish → `ViewItemPage`
+        ├── "Add to cart" → `CartPage`
+        └── "Back" → `ClientMenuPage`
 
----
+ClientMenuPage sidebar
+  └── "Book a table" → `BookTablePage`
 
-### 2. **Hero.jsx** (`/src/components/Hero.jsx`)
-**Purpose:** Hero section with call-to-action and feature cards  
-**Features:**
-- Main headline: "Sync your Restaurant, elevate every dining experience"
-- Two CTAs: "Get Started" button + "Learn more" link
-- 4 Feature glass cards with custom SVG icons (orange stroke)
-  - Easy Menu Management
-  - Real-time Orders
-  - Table Booking
-  - Analytics & Reports
-- Right side visual: Staggered food dish images (3 overlapping plates with styling)
-- Decorative SVG background shapes and dots
+## Notes about components and styling
 
-**Key Methods:**
-- `useNavigate()` hook for navigation to signup
-- `FeatureCard` sub-component for reusable feature cards
+- The `Sidebar` component receives a `links` array from each page to control what appears for Admin vs Client. Admin pages pass admin-only links; client pages pass client links.
+- Icons are provided by `src/components/Icons.jsx` as inline SVGs.
+- Credentials illustrations use PNG assets located in `src/assets/` (house.png, map.png, check.png).
 
-**Styling:** `Hero.css` with advanced positioning, transforms, and staggered animations
+## Visual changes made recently
+
+- BookTable: seat map enlarged, sidebar restored to full height, legend colors adjusted.
+- Credentials: illustration images enlarged; step indicator spacing improved.
+- Client menu: responsive grid and larger dish images.
+
+## Where to look
+
+- Routing and user flow: [src/App.jsx](src/App.jsx)
+- Sidebar behavior: [src/components/Sidebar.jsx](src/components/Sidebar.jsx)
+- Credentials page: [src/pages/CredentialsPage.jsx](src/pages/CredentialsPage.jsx) and [src/styles/CredentialsPage.css](src/styles/CredentialsPage.css)
+- Book table: [src/pages/BookTablePage.jsx](src/pages/BookTablePage.jsx) and [src/styles/BookTablePage.css](src/styles/BookTablePage.css)
 
 ---
-
-### 3. **FeaturesSection.jsx** (`/src/components/FeaturesSection.jsx`)
-**Purpose:** Features showcase section with stats  
-**Features:**
-- Left side: Text describing DineSync benefits + CTA button
-- Stats row showing:
-  - 4.9/5 Star rating
-  - 1,200+ Restaurants
-  - 12,000+ Orders
-  - 3,000+ Reservations
-- Right side: 3-image collage (Phone mockup, Restaurant interior, Plate close-up)
-
-**Styling:** `No separate CSS imported` - styled inline or in parent CSS
-
----
-
-### 4. **ReviewsSection.jsx** (`/src/components/ReviewsSection.jsx`)
-**Purpose:** Customer testimonials section  
-**Features:**
-- Title: "Loved by restaurant owners and food lovers"
-- 3 Review cards displaying:
-  - Quote text
-  - Customer avatar placeholder
-  - Customer name and role
-  - Orange quote icon
-- Pagination dots (3 dots for carousel navigation - non-functional UI)
-
-**Structure:**
-- `ReviewCard` sub-component for each review
-
-**Data Format:**
-```jsx
-{
-  text: "Review content...",
-  name: "Customer name",
-  role: "Customer role/position"
-}
-```
-
----
-
-### 5. **Footer.jsx** (`/src/components/Footer.jsx`)
-**Purpose:** Website footer with branding, links, and info  
-**Features:**
-- Brand info block: Logo + company description
-- 4 Link columns:
-  - Product (How it works, Features, Pricing)
-  - Company (About Us, Blog, Contacts)
-  - Legal (Privacy Policy, Terms of Service)
-  - Follow Us (Social media links with emoji icons)
-- Copyright notice at bottom
-
-**Styling:** `Footer styling not found in CSS files - likely embedded`
-
----
-
-### 6. **Sidebar.jsx** (`/src/components/Sidebar.jsx`)
-**Purpose:** Navigation sidebar for admin/client dashboards  
-**Features:**
-- Top logo section with hamburger menu icon
-- Dynamic navigation links (passed as props)
-- Sidebar links with icons and labels (highlight active page)
-- Bottom section: Logout and Help options
-
-**Props:**
-```jsx
-{
-  links: [              // Array of navigation items
-    { label: string, icon: string }
-  ],
-  onNavigate: function, // Callback when link clicked
-  activePage: string    // Current active page
-}
-```
-
-**Functionality:**
-- Maps over `links` array to render menu items
-- Highlights active page with class
-- Emoji icons for visual identification
-
-**Styling:** `Sidebar.css`
-
----
-
-### 7. **LoginForm.jsx** (`/src/components/loginform.jsx`)
-**Purpose:** Login form component (reusable)  
-**Features:**
-- Email input with envelope icon
-- Password input with lock icon
-- Forgot password link
-- Login button
-- Social login divider
-- Google and Apple OAuth buttons (UI only)
-- Sign up link
-
-**State Management:**
-```jsx
-const [email, setEmail] = useState("");
-const [password, setPassword] = useState("");
-```
-
-**Handlers:**
-- `handleLogin()` - Logs credentials to console (placeholder)
-
-**Styling:** `LoginForm.css`
-
----
-
-## 📄 PAGES (Full-page Components)
-
-### 1. **LandingPage.jsx** (`/src/pages/landingPage.jsx`)
-**Purpose:** Public landing page (entry point for non-logged-in users)  
-**Composition:**
-```jsx
-<LandingPage>
-  <Navbar />           // Navigation
-  <Hero />             // Hero section with CTA
-  <FeaturesSection />  // Features showcase
-  <ReviewsSection />   // Customer testimonials
-  <Footer />           // Footer
-</LandingPage>
-```
-
-**Styling:** `landingPage.css`
-
----
-
-### 2. **LoginPage.jsx** (`/src/pages/LoginPage.jsx`)
-**Purpose:** User login page  
-**Layout:** Split screen design
-- **Left side:** Restaurant background image + DineSync logo overlay
-- **Right side:** LoginForm component
-
-**Features:**
-- Logo and brand text (Dine in white, Sync in orange)
-- Tagline: "sync your restaurant, simplify your life"
-- Underline decoration
-
-**Styling:** `LoginPage.css` - Two-column responsive layout
-
----
-
-### 3. **SignUpPage.jsx** (`/src/pages/SignUpPage.jsx`)
-**Purpose:** User registration/account creation  
-**Layout:** Similar split-screen design
-
-**Form Fields:**
-```jsx
-State:
-- firstName, setFirstName
-- lastName, setLastName
-- phone, setPhone
-- email, setEmail
-- password, setPassword
-- showPassword, setShowPassword (toggle visibility)
-- role, setRole ("Admin" or "Client")
-```
-
-**Features:**
-- Phone input with +250 country code + divider
-- Password with show/hide toggle (👁 icon)
-- Password hints display (at least 8 chars, number, uppercase)
-- Role selection buttons (Admin / Client) - toggle selection style
-- Link to login page: "Already have an account? Log In"
-- Left side: Same branding as LoginPage
-
-**Handler:**
-- `handleSignUp()` - Logs registration details (placeholder)
-
-**Styling:** `SignUpPage.css`
-
----
-
-### 4. **CredentialsPage.jsx** (`/src/pages/CredentialsPage.jsx`)
-**Purpose:** Restaurant onboarding wizard (3-step form)  
-**Layout:** Split screen with step indicator on right
-
-**Step Indicator Component:**
-- Visual step circles (1, 2, 3)
-- Step labels, connecting lines
-- Completed steps show checkmark (✓)
-- Current step highlighted
-
-**State:**
-```jsx
-const [step, setStep] = useState(1);
-const [formData, setFormData] = useState({
-  name, type, contactPhone, ownerPhone,
-  ownerName, ownerEmail, address, city,
-  postal, openTime, closeTime
-});
-```
-
-**3-Step Form Structure:**
-
-**Step 1: Restaurant Information**
-- Restaurant name
-- Restaurant type (Cafe, etc.)
-- Contact number (@Restaurant)
-- Owner phone number
-- Owner name
-- Owner email
-- Next button → Step 2
-
-**Step 2: Location & Hours**
-- Full address
-- City
-- Postal code
-- Opening hours (dropdown from 06:00-12:00)
-- Closing hours (dropdown from 20:00-00:00)
-- Back & Next buttons
-
-**Step 3: Review**
-- Displays summary of entered data
-- Review-label style display
-- Shows: Restaurant name, address, type
-- Back & Finish buttons
-
-**Right Side Illustration:**
-- Changes based on current step (emoji + label)
-- Step 1: "Helps us personalise your restaurant" 🏪
-- Step 2: "Add your restaurant location" 🗺️
-- Step 3: "Please review and confirm your details" 📋
-
-**Styling:** `CredentialsPage.css`
-
----
-
-### 5. **OverviewPage.jsx** (`/src/pages/OverviewPage.jsx`)
-**Purpose:** Admin dashboard showing restaurant stats and analytics  
-**Layout:** Sidebar + Main content
-
-**Sidebar:** Navigation with links:
-- Overview (🏠)
-- Menu (📋)
-- Order (🪑)
-- Bookings (🪑)
-- Settings (⚙️)
-- My account (👤)
-
-**Header:**
-- "Overview" title
-- Date range filter: "May 15 - May 22 ▾"
-- Download report button
-
-**Stat Cards Grid (4 cards):**
-Each card shows: label, value, change %, "from yesterday"
-```jsx
-1. Table orders: 125 (+12.3%)
-2. Total revenue: 200k rwf (+5.3%)
-3. Booked tables: 12 (+30%)
-4. New customers: 125 (+6.3%)
-```
-
-**StatCard Component:**
-```jsx
-<StatCard 
-  label="Label text"
-  value="Value display"
-  change="+X.X%"
-/>
-```
+If you'd like, I can also:
+- Add screenshots to this documentation.
+- Create a CONTRIBUTING.md and PR template.
+- Publish a live demo (Netlify, Vercel) and add the demo link to the README.
+Tell me which of those you want next.
 
 **Bottom Section:**
 - **Left:** Chart box showing "Orders overview"
