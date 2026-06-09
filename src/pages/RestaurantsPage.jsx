@@ -2,20 +2,24 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 import "../styles/RestaurantsPage.css";
+import grandeImg from "../assets/La grande palace hotel.png";
+import italianImg from "../assets/italian resto.png";
+import mcdonaldsImg from "../assets/mc donalds.png";
+import kigaliciousImg from "../assets/kigalicious.png";
+import nyamataImg from "../assets/Nyamata.png";
+import cameliaImg from "../assets/cafe camelia.png";
 
 const clientLinks = [
   { label: "Restaurants", icon: "restaurant" },
-  { label: "Favorites", icon: "favorites" },
-  { label: "Profile", icon: "profile" },
 ];
 
 const restaurants = [
-  { id: 1, name: "La grande palace hotel" },
-  { id: 2, name: "Italian resto" },
-  { id: 3, name: "McDonalds" },
-  { id: 4, name: "kigalicious" },
-  { id: 5, name: "Nyamata" },
-  { id: 6, name: "cafe camelia" },
+  { id: 1, name: "La grande palace hotel", image: grandeImg },
+  { id: 2, name: "Italian resto", image: italianImg },
+  { id: 3, name: "McDonalds", image: mcdonaldsImg },
+  { id: 4, name: "Kigalicious", image: kigaliciousImg },
+  { id: 5, name: "Nyamata", image: nyamataImg },
+  { id: 6, name: "Cafe Camelia", image: cameliaImg },
 ];
 
 const options = ["View All", "Description", "View near me"];
@@ -55,7 +59,9 @@ function RestaurantsPage() {
             <div className="restaurant-grid">
               {restaurants.map((r) => (
                 <div key={r.id} className="restaurant-card">
-                  <div className="restaurant-card-img"></div>
+                  <div className="restaurant-card-img">
+                    <img src={r.image} alt={r.name} />
+                  </div>
                   <p className="restaurant-card-name">{r.name}</p>
                   <button className="btn-visit" onClick={() => handleVisit(r)}>
                     Visit

@@ -3,24 +3,26 @@ import { useNavigate, useLocation } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 import { Icon } from "../components/Icons";
 import "../styles/ClientMenuPage.css";
+import shawarmaImg from "../assets/shawarma.png";
+import caesarSaladImg from "../assets/caesar salad.png";
+import pizzaImg from "../assets/pizza.png";
+import latteImg from "../assets/latte.png";
+import smoothieImg from "../assets/smoothie.png";
+import fruitSaladImg from "../assets/fruit salad.png";
 
 const clientLinks = [
-  { label: "Menu", icon: "menu" },
   { label: "Book a table", icon: "bookings" },
-  { label: "My orders", icon: "order" },
-  { label: "Favorites", icon: "favorites" },
-  { label: "Profile", icon: "profile" },
 ];
 
 const categories = ["All items", "Main dish", "Starter", "Desserts", "Drinks"];
 
 const foodItems = [
-  { id: 1, name: "Chicken shawarma", price: "4500rwf", category: "Main dish" },
-  { id: 2, name: "Caesar salad", price: "3000rwf", category: "Starter" },
-  { id: 3, name: "beef pizza", price: "10000rwf", category: "Main dish" },
-  { id: 4, name: "Latte", price: "2700rwf", category: "Drinks" },
-  { id: 5, name: "Smoothie", price: "4500rwf", category: "Drinks" },
-  { id: 6, name: "fruit salad", price: "2000rwf", category: "Starter" },
+  { id: 1, name: "Chicken shawarma", price: "4500rwf", category: "Main dish", image: shawarmaImg },
+  { id: 2, name: "Caesar salad", price: "3000rwf", category: "Starter", image: caesarSaladImg },
+  { id: 3, name: "Beef pizza", price: "10000rwf", category: "Main dish", image: pizzaImg },
+  { id: 4, name: "Latte", price: "2700rwf", category: "Drinks", image: latteImg },
+  { id: 5, name: "Smoothie", price: "4500rwf", category: "Drinks", image: smoothieImg },
+  { id: 6, name: "Fruit salad", price: "2000rwf", category: "Starter", image: fruitSaladImg },
 ];
 
 function ClientMenuPage({ restaurantName: propRestaurantName }) {
@@ -44,7 +46,7 @@ function ClientMenuPage({ restaurantName: propRestaurantName }) {
 
   return (
     <div className="admin-layout">
-      <Sidebar links={clientLinks} activePage="Menu" onNavigate={() => {}} />
+      <Sidebar links={clientLinks} activePage="Book a table" />
 
       <div className="admin-content">
         <div className="client-menu-topbar">
@@ -79,7 +81,9 @@ function ClientMenuPage({ restaurantName: propRestaurantName }) {
             <div className="food-grid">
               {filtered.map((item) => (
                 <div key={item.id} className="food-card">
-                  <div className="food-card-img"></div>
+                  <div className="food-card-img">
+                    <img src={item.image} alt={item.name} />
+                  </div>
                   <p className="food-card-name">{item.name}</p>
                   <div className="food-card-footer">
                     <span className="food-card-price">{item.price}</span>

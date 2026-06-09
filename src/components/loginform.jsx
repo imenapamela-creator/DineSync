@@ -56,14 +56,19 @@ function LoginForm() {
       </div>
 
       <div className="social-buttons">
-        <button className="btn-social">
-          <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" />
-          Continue with Google
-        </button>
-        <button className="btn-social">
-          <img src="https://www.svgrepo.com/show/452234/apple.svg" alt="Apple" />
-          Continue with Apple
-        </button>
+        {[
+          { label: "Google", icon: "google" },
+          { label: "Apple", icon: "apple" },
+          { label: "Facebook", icon: "facebook" },
+          { label: "Instagram", icon: "instagram" },
+          { label: "LinkedIn", icon: "linkedin" },
+          { label: "X", icon: "x" },
+        ].map((provider) => (
+          <button key={provider.label} className="btn-social">
+            <Icon name={provider.icon} size={18} />
+            Continue with {provider.label}
+          </button>
+        ))}
       </div>
 
       <p className="signup-text">

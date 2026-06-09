@@ -1,4 +1,5 @@
 import LogoImg from "../assets/LOGO.png"; // Updated asset reference name
+import { Icon } from "./Icons";
 
 function Footer() {
   return (
@@ -38,10 +39,10 @@ function Footer() {
         <div className="footer-links-col">
           <h4>Follow Us</h4>
           <div className="footer-socials-row">
-            <a href="#fb">📘</a>
-            <a href="#ig">📸</a>
-            <a href="#tw">🐦</a>
-            <a href="#li">💼</a>
+            <a href="#fb" aria-label="Facebook"><Icon name="facebook" size={18} /></a>
+            <a href="#ig" aria-label="Instagram"><Icon name="instagram" size={18} /></a>
+            <a href="#tw" aria-label="X"><Icon name="x" size={18} /></a>
+            <a href="#li" aria-label="LinkedIn"><Icon name="linkedin" size={18} /></a>
           </div>
         </div>
 

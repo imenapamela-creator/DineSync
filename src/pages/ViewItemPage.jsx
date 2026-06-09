@@ -1,6 +1,22 @@
 import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import "../styles/ViewItemPage.css";
+import shawarmaImg from "../assets/shawarma.png";
+import caesarSaladImg from "../assets/caesar salad.png";
+import pizzaImg from "../assets/pizza.png";
+import latteImg from "../assets/latte.png";
+import smoothieImg from "../assets/smoothie.png";
+import fruitSaladImg from "../assets/fruit salad.png";
+
+const itemImages = {
+  "Chicken shawarma": shawarmaImg,
+  "Beef pizza": pizzaImg,
+  "beef pizza": pizzaImg,
+  "Caesar salad": caesarSaladImg,
+  Latte: latteImg,
+  Smoothie: smoothieImg,
+  "Fruit salad": fruitSaladImg,
+};
 
 function ViewItemPage() {
   const navigate = useNavigate();
@@ -8,6 +24,7 @@ function ViewItemPage() {
   const [qty, setQty] = useState(2);
   const item = location.state?.item;
   const restaurantName = location.state?.restaurantName;
+  const itemImage = itemImages[item?.name] || shawarmaImg;
 
   return (
     <div className="view-item-overlay">

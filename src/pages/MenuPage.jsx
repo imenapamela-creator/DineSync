@@ -87,8 +87,12 @@ function MenuPage() {
                 <span>{item.category}</span>
                 <span>{item.price}</span>
                 <div className="action-cell">
-                  <button className="btn-edit">✏️ Edit</button>
-                  <button className="btn-delete" onClick={() => handleDelete(item.id)}>🗑️ Delete</button>
+                  <button className="btn-edit">
+                    <Icon name="edit" size={16} /> Edit
+                  </button>
+                  <button className="btn-delete" onClick={() => handleDelete(item.id)}>
+                    <Icon name="trash" size={16} /> Delete
+                  </button>
                 </div>
               </div>
             ))}

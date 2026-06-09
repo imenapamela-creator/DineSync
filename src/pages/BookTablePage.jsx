@@ -1,9 +1,13 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { Icon } from "../components/Icons";
 import "../styles/BookTablePage.css";
 
 const totalSeats = 20;
 
-function BookTablePage({ onBack }) {
+function BookTablePage() {
+  const navigate = useNavigate();
+  const onBack = () => navigate(-1);
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [guests, setGuests] = useState("");
@@ -29,14 +33,14 @@ function BookTablePage({ onBack }) {
   return (
     <div className="book-table-page">
       <div className="book-left">
-        <button className="back-arrow" onClick={onBack}>←</button>
+        <button className="back-arrow" onClick={onBack}><Icon name="back" size={18} /></button>
         <h2 className="book-title">Book a table</h2>
 
         <div className="book-input-group">
           <label>Date</label>
           <div className="book-input-wrapper">
             <input type="date" value={date} onChange={(e) => setDate(e.target.value)} placeholder="Enter date" />
-            <span>🕐</span>
+            <Icon name="clock" size={18} />
           </div>
         </div>
 
@@ -47,7 +51,7 @@ function BookTablePage({ onBack }) {
               <option value="">Select time</option>
               {["12:00","13:00","14:00","18:00","19:00","20:00"].map(t => <option key={t} value={t}>{t}</option>)}
             </select>
-            <span>🕐</span>
+            <Icon name="clock" size={18} />
           </div>
         </div>
 
@@ -74,7 +78,7 @@ function BookTablePage({ onBack }) {
       </div>
 
       <div className="book-right">
-        <button className="back-arrow-right" onClick={onBack}>←</button>
+        <button className="back-arrow-right" onClick={onBack}><Icon name="back" size={18} /></button>
         <div className="seat-map">
           {Array.from({ length: totalSeats }, (_, i) => i + 1).map((num) => (
             <div
@@ -82,7 +86,7 @@ function BookTablePage({ onBack }) {
               className={`seat ${getSeatStatus(num)}`}
               onClick={() => toggleSeat(num)}
             >
-              ⚙️
+              {num}
             </div>
           ))}
         </div>
