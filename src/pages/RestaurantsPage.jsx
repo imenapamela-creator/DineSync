@@ -17,12 +17,26 @@ const clientLinks = [
 ];
 
 const restaurants = [
-  { id: 1, name: "La grande palace hotel", image: grandeImg },
-  { id: 2, name: "Italian resto", image: italianImg },
-  { id: 3, name: "McDonalds", image: mcdonaldsImg },
+  { id: 1, name: "La Grande Palace Hotel", image: grandeImg },
+  { id: 2, name: "Italian Resto", image: italianImg },
+  { id: 3, name: "McDonald's", image: mcdonaldsImg },
   { id: 4, name: "Kigalicious", image: kigaliciousImg },
-  { id: 5, name: "Nyamata", image: nyamataImg },
+  { id: 5, name: "Nyamata Bistro", image: nyamataImg },
   { id: 6, name: "Cafe Camelia", image: cameliaImg },
+  { id: 7, name: "Savanna Grill", image: grandeImg },
+  { id: 8, name: "Rwanda Kitchen", image: italianImg },
+  { id: 9, name: "Urban Spice", image: mcdonaldsImg },
+  { id: 10, name: "Lagoon Lounge", image: kigaliciousImg },
+  { id: 11, name: "Bamboo Sushi", image: nyamataImg },
+  { id: 12, name: "Riverfront Dine", image: cameliaImg },
+  { id: 13, name: "Mandazi House", image: grandeImg },
+  { id: 14, name: "Sunset Terrace", image: italianImg },
+  { id: 15, name: "Parkview Café", image: mcdonaldsImg },
+  { id: 16, name: "Mountain View Grill", image: kigaliciousImg },
+  { id: 17, name: "Heritage Table", image: nyamataImg },
+  { id: 18, name: "Bella Cucina", image: cameliaImg },
+  { id: 19, name: "Golden Wok", image: grandeImg },
+  { id: 20, name: "Lotus Garden", image: italianImg },
 ];
 
 const options = ["View All", "Description", "View near me"];

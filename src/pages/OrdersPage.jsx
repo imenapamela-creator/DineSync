@@ -9,11 +9,21 @@ const adminLinks = [
 ];
 
 const allOrders = [
-  { id: "#QRD-1021", customer: "Aline Mugisha", items: "1 items", total: "FRW 16000", status: "Completed", time: "23:30" },
-  { id: "#QRD-1021", customer: "Aline Mugisha", items: "1 items", total: "FRW 16000", status: "Preparing", time: "23:30" },
-  { id: "#QRD-1021", customer: "Aline Mugisha", items: "1 items", total: "FRW 16000", status: "Completed", time: "23:30" },
-  { id: "#QRD-1021", customer: "Aline Mugisha", items: "1 items", total: "FRW 16000", status: "Pending", time: "23:30" },
-  { id: "#QRD-1021", customer: "Aline Mugisha", items: "1 items", total: "FRW 16000", status: "Cancelled", time: "23:30" },
+  { id: "#QRD-1021", customer: "Aline Mugisha", items: "2 items", total: "FRW 16000", status: "Completed", time: "23:30" },
+  { id: "#QRD-1022", customer: "Jean Nsengiyumva", items: "3 items", total: "FRW 23500", status: "Preparing", time: "22:10" },
+  { id: "#QRD-1023", customer: "Claire Uwase", items: "1 items", total: "FRW 7800", status: "Pending", time: "18:45" },
+  { id: "#QRD-1024", customer: "Emmanuel Habimana", items: "4 items", total: "FRW 44800", status: "Completed", time: "20:05" },
+  { id: "#QRD-1025", customer: "Sophie Mukamana", items: "2 items", total: "FRW 12000", status: "Cancelled", time: "19:15" },
+  { id: "#QRD-1026", customer: "Kevin Niyonzima", items: "3 items", total: "FRW 20700", status: "Preparing", time: "12:30" },
+  { id: "#QRD-1027", customer: "Nadia Uwera", items: "1 items", total: "FRW 5200", status: "Pending", time: "13:50" },
+  { id: "#QRD-1028", customer: "Eric Karemera", items: "5 items", total: "FRW 56000", status: "Completed", time: "21:20" },
+  { id: "#QRD-1029", customer: "Beata Uwimana", items: "2 items", total: "FRW 11000", status: "Preparing", time: "17:00" },
+  { id: "#QRD-1030", customer: "Samuel Iradukunda", items: "1 items", total: "FRW 4500", status: "Pending", time: "14:40" },
+  { id: "#QRD-1031", customer: "Chantal Tuyizere", items: "3 items", total: "FRW 28500", status: "Completed", time: "16:15" },
+  { id: "#QRD-1032", customer: "Patrick Bizimana", items: "2 items", total: "FRW 13500", status: "Cancelled", time: "11:55" },
+  { id: "#QRD-1033", customer: "Diane Umutesi", items: "4 items", total: "FRW 32200", status: "Preparing", time: "19:40" },
+  { id: "#QRD-1034", customer: "Fabrice Nkurunziza", items: "3 items", total: "FRW 24300", status: "Completed", time: "22:50" },
+  { id: "#QRD-1035", customer: "Alice Niyonzima", items: "2 items", total: "FRW 9800", status: "Pending", time: "15:25" },
 ];
 
 const tabs = ["All", "Pending", "Preparing", "completed", "Cancelled"];

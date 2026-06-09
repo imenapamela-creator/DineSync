@@ -96,6 +96,11 @@
   color: #555;
 }
 
+.menu-table {
+  overflow-y: auto;
+  max-height: 600px;
+}
+
 .table-row {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr;

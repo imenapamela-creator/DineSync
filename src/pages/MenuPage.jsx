@@ -10,11 +10,26 @@ const adminLinks = [
 ];
 
 const menuItems = [
-  { id: 1, name: "Capuccino coffee", category: "Drinks", price: "5000rwf" },
-  { id: 2, name: "Iced Tea", category: "Drinks", price: "5000rwf" },
-  { id: 3, name: "Bagu", category: "Main", price: "18000rwf" },
+  { id: 1, name: "Cappuccino coffee", category: "Drinks", price: "5000rwf" },
+  { id: 2, name: "Iced tea", category: "Drinks", price: "5000rwf" },
+  { id: 3, name: "Baguette", category: "Main", price: "18000rwf" },
   { id: 4, name: "Cheese burger", category: "Main", price: "7000rwf" },
   { id: 5, name: "Vanilla cake", category: "Dessert", price: "5000rwf" },
+  { id: 6, name: "Lemonade", category: "Drinks", price: "4200rwf" },
+  { id: 7, name: "Grilled chicken", category: "Main", price: "15000rwf" },
+  { id: 8, name: "Garlic bread", category: "Starters", price: "3200rwf" },
+  { id: 9, name: "Mixed fruit tart", category: "Dessert", price: "5800rwf" },
+  { id: 10, name: "Espresso shot", category: "Drinks", price: "2800rwf" },
+  { id: 11, name: "Spaghetti bolognese", category: "Main", price: "12000rwf" },
+  { id: 12, name: "Chicken wings", category: "Starters", price: "7600rwf" },
+  { id: 13, name: "Chocolate brownie", category: "Dessert", price: "6000rwf" },
+  { id: 14, name: "Mango smoothie", category: "Drinks", price: "4800rwf" },
+  { id: 15, name: "Caesar salad", category: "Starters", price: "4200rwf" },
+  { id: 16, name: "Beef steak", category: "Main", price: "22000rwf" },
+  { id: 17, name: "Truffle fries", category: "Starters", price: "6500rwf" },
+  { id: 18, name: "Cheesecake", category: "Dessert", price: "6200rwf" },
+  { id: 19, name: "Matcha latte", category: "Drinks", price: "5300rwf" },
+  { id: 20, name: "Fish tacos", category: "Main", price: "9400rwf" },
 ];
 
 const categories = ["All", "Starters", "Main", "Desserts", "Drink"];
