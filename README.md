@@ -1,6 +1,8 @@
 # DineSync — Frontend
 
-DineSync is a single-page React application built with Vite that provides a restaurant management and discovery experience. It supports two user roles:
+![Built with React](https://img.shields.io/badge/built%20with-React-61DAFB?logo=react&logoColor=white) ![Vite](https://img.shields.io/badge/bundler-Vite-646CFF?logo=vite&logoColor=white)
+
+DineSync is a single-page React application (JSX) built with Vite that provides a restaurant management and discovery experience. It supports two user roles:
 
 - Admin: onboard a restaurant, manage menu items, and view orders and analytics.
 - Client: discover restaurants, view menus, add items to cart, and book tables.
