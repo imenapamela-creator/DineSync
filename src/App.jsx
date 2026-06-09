@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Import your pages
 import LandingPage from "./pages/LandingPage";
-import LoginPage from "./pages/LoginPage";
+import LoginPage from "./pages/loginPage";
 import SignUpPage from "./pages/SignUpPage";
 import ForgotPasswordPage from "./pages/ForgotPasswordPage";
 import CredentialsPage from "./pages/CredentialsPage";

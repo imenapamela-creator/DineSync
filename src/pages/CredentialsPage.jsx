@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Icon } from "../components/Icons";
+import houseImg from "../assets/house.png";
+import mapImg from "../assets/map.png";
+import checkImg from "../assets/check.png";
 import "../styles/CredentialsPage.css";
 
 function StepIndicator({ currentStep }) {
@@ -159,9 +162,9 @@ function CredentialsPage() {
   }
 
   const illustrations = [
-    { label: "Helps us personalise your restaurant", icon: "restaurant" },
-    { label: "Add your restaurant location", icon: "calendar" },
-    { label: "Please review and confirm your details", icon: "menu" }
+    { label: "Helps us personalise your restaurant", image: houseImg },
+    { label: "Add your restaurant location", image: mapImg },
+    { label: "Please review and confirm your details", image: checkImg }
   ];
 
   return (
@@ -184,7 +187,7 @@ function CredentialsPage() {
         <div className="cred-illustration">
           <p className="cred-illustration-label">{illustrations[step - 1].label}</p>
           <div className="cred-illustration-icon">
-            <Icon name={illustrations[step - 1].icon} size={36} />
+            <img src={illustrations[step - 1].image} alt="illustration" />
           </div>
         </div>
       </div>

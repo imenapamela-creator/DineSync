@@ -11,6 +11,9 @@ import cameliaImg from "../assets/cafe camelia.png";
 
 const clientLinks = [
   { label: "Restaurants", icon: "restaurant" },
+  { label: "Book a table", icon: "bookings" },
+  { label: "Favorites", icon: "favorites" },
+  { label: "Profile", icon: "profile" },
 ];
 
 const restaurants = [

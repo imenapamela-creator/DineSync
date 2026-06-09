@@ -29,7 +29,9 @@ function ViewItemPage() {
   return (
     <div className="view-item-overlay">
       <div className="view-item-box">
-        <div className="view-item-img"></div>
+        <div className="view-item-img">
+        <img src={itemImage} alt={item ? item.name : "Menu item"} />
+      </div>
 
         <div className="view-item-body">
           <div className="view-item-left">
@@ -42,7 +44,7 @@ function ViewItemPage() {
               <button className="btn-add-cart" onClick={() => navigate("/cart", { state: { restaurantName } })}>
                 Add to cart
               </button>
-              <button className="btn-back-item" onClick={() => navigate(-1)}>Back</button>
+              <button className="btn-back-item" onClick={() => navigate("/client-menu", { state: { restaurantName } })}>Back</button>
             </div>
           </div>
 

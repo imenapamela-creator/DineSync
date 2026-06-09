@@ -6,9 +6,6 @@ const adminLinks = [
   { label: "overview", icon: "home" },
   { label: "Menu", icon: "menu" },
   { label: "Order", icon: "order" },
-  { label: "Bookings", icon: "bookings" },
-  { label: "Settings", icon: "settings" },
-  { label: "My account", icon: "profile" },
 ];
 
 const allOrders = [

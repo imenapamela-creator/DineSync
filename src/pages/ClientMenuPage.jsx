@@ -11,7 +11,10 @@ import smoothieImg from "../assets/smoothie.png";
 import fruitSaladImg from "../assets/fruit salad.png";
 
 const clientLinks = [
+  { label: "Restaurants", icon: "restaurant" },
   { label: "Book a table", icon: "bookings" },
+  { label: "Favorites", icon: "favorites" },
+  { label: "Profile", icon: "profile" },
 ];
 
 const categories = ["All items", "Main dish", "Starter", "Desserts", "Drinks"];

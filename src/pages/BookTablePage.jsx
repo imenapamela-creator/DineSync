@@ -86,7 +86,7 @@ function BookTablePage() {
               className={`seat ${getSeatStatus(num)}`}
               onClick={() => toggleSeat(num)}
             >
-              {num}
+              ⚙️
             </div>
           ))}
         </div>
@@ -102,7 +102,7 @@ function BookTablePage() {
           </div>
           <div className="legend-item">
             <div className="legend-dot booked-dot"></div>
-            <span>booked</span>
+            <span>Booked</span>
           </div>
         </div>
       </div>
