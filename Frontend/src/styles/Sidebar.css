@@ -1,0 +1,106 @@
+.sidebar {
+  width: 260px;
+  min-width: 260px;
+  background-color: #5a1a0e;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 0;
+  color: #ffffff;
+}
+
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+}
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 24px 32px 24px;
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.logo-dine {
+  color: #ffffff;
+}
+
+.logo-sync {
+  color: #c8651b;
+}
+
+.sidebar-menu-icon {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.sidebar-menu-icon svg,
+.sidebar-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.sidebar-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+}
+
+.sidebar-links li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 28px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  color: #e8d5cc;
+  transition: background-color 0.2s;
+}
+
+.sidebar-links li:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.sidebar-links li.active {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.sidebar-icon {
+  font-size: 20px;
+}
+
+.sidebar-bottom {
+  padding: 24px 28px 8px 28px;
+  font-size: 14px;
+  color: #e8d5cc;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.sidebar-bottom p:hover {
+  color: #ffffff;
+}
+
+/* Center the main admin content area and constrain inner width */
+.admin-content {
+  flex: 1;
+  padding: 32px 36px;
+}
+
+.admin-content > * {
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+}
